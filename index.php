@@ -85,8 +85,8 @@
     <navbar class="navbar">
         <div class="container">
             <div class="catalog-content">
-                <p class="logo">KUGOO</p>
-                <button class="button-catalog">
+                <a href="#" class="logo" >KUGOO</a>
+                <button class="button-catalog" data-action="open-modal">
                     <span>
                         <span class="line"><svg width="13" height="2" viewBox="0 0 13 2" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +108,16 @@
                         </span>
                     </span>
 
-                    <span class="katalog-text">Каталог</span>
+                    <div class="katalog-text"><div>Каталог</div>
+                        <ul class="list-catalog">
+                            <li class="catalog-item">Katalog 1</li>
+                            <li class="catalog-item">Katalog 2</li>
+                            <li class="catalog-item">Katalog 3</li>
+                            <li class="catalog-item">Katalog 4</li>
+                            <li class="catalog-item">Katalog 5</li>
+                        </ul>
+                    </div>
+                    
                 </button>
 
                 <input class="border-box border-text" type="text" placeholder="Искать самокат KUGO" />
@@ -457,7 +466,7 @@
                             </div>
                         </div>
 
-                        <button class="cards-button">Записаться на тест-драйв</button>
+                        <button class="cards-button" data-action="open-modal">Записаться на тест-драйв</button>
                     </div>
                 </div>
                 <div class="products-card__item">
@@ -627,7 +636,7 @@
                             </div>
                         </div>
 
-                        <button class="cards-button">Записаться на тест-драйв</button>
+                        <button class="cards-button" data-action="open-modal">Записаться на тест-драйв</button>
                     </div>
                 </div>
                 <div class="products-card__item">
@@ -1013,7 +1022,7 @@
                     кто получит скидку на новые самокаты
                 </p>
                 <form action="telegram.php" method="POST">
-                    <input type="email" name="email" class="input-email" placeholder="Введите Ваш email" />
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="input-email" placeholder="Введите Ваш email" />
                     <button class="email-button">Подписаться</button>
                 </form>
             </div>

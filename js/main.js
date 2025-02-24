@@ -1,41 +1,41 @@
 /* Создаем префикс +7, даже если вводят 8 или 9 */
 const prefixNumber = (str) => {
   /* если вводят семерку, добавляем ей скобку */
-  if (str === '7') {
-    return '7 (';
+  if (str === "7") {
+    return "7 (";
   }
   /* если вводят восьмерку, ставим вместо нее +7 ( */
-  if (str === '8') {
-    return '+7 (';
+  if (str === "8") {
+    return "+7 (";
   }
   /* если пишут девятку, заменяем на +7 (9  */
-  if (str === '9') {
-    return '7 (9';
+  if (str === "9") {
+    return "7 (9";
   }
   /* в других случаях просто 7 (  */
-  return '7 (';
+  return "7 (";
 }; /* профикс в любом раскладе будет +7 () */
 
 /* Ловим события ввода в любом поле */
-document.addEventListener('input', (e) => {
+document.addEventListener("input", (e) => {
   /* Проверяем, что это поле имеет класс phone-mask */
-  if (e.target.classList.contains('phone-mask')) {
+  if (e.target.classList.contains("phone-mask")) {
     /* поле с телефоном помещаем в переменную input */
     const input = e.target;
     /* вставляем плюс в начале номера */
-    const value = input.value.replace(/\D+/g, '');
+    const value = input.value.replace(/\D+/g, "");
     /* длинна номера 11 символов */
     const numberLength = 11;
 
     /* Создаем переменную, куда будем записывать номер */
     let result;
     /* Если пользователь ввел 8... */
-    if (input.value.includes('+8') || input.value[0] === '8') {
+    if (input.value.includes("+8") || input.value[0] === "8") {
       /* Стираем восьмерку */
-      result = '';
+      result = "";
     } else {
       /* Оставляем плюсик в поле */
-      result = '+';
+      result = "+";
     }
 
     /* Запускаем цикл, где переберем каждую цифру от 0 до 11 */
@@ -47,15 +47,15 @@ document.addEventListener('input', (e) => {
           continue;
         case 4:
           /* добавляем после "+7 (" круглую скобку ")" */
-          result += ') ';
+          result += ") ";
           break;
         case 7:
           /* дефис после 7 символа */
-          result += '-';
+          result += "-";
           break;
         case 9:
           /* еще дефис  */
-          result += '-';
+          result += "-";
           break;
         default:
           break;
@@ -69,34 +69,36 @@ document.addEventListener('input', (e) => {
 });
 
 const refs = {
-  openModalBtn: document.querySelector('[data-action="open-modal"]'),
-  closeModalBtn: document.querySelector('[data-action="close-modal"]'),
-  backdrop: document.querySelector('.js-backdrop'),
+  openModalBtns: document.querySelectorAll('[data-action="open-modal"]'),
+  closeModalBtns: document.querySelectorAll('[data-action="close-modal"]'),
+  backdrop: document.querySelector(".js-backdrop"),
 };
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
-refs.closeModalBtn.addEventListener('click', onCloseModal);
-refs.backdrop.addEventListener('click', onBackdropClick);
+refs.openModalBtns.forEach((btn) => btn.addEventListener("click", onOpenModal));
+refs.closeModalBtns.forEach((btn) =>
+  btn.addEventListener("click", onCloseModal)
+);
+refs.backdrop.addEventListener("click", onBackdropClick);
 
 function onOpenModal() {
-  window.addEventListener('keydown', onEscKeyPress);
-  document.body.classList.add('show-modal');
+  window.addEventListener("keydown", onEscKeyPress);
+  document.body.classList.add("show-modal");
 }
 
 function onCloseModal() {
-  window.removeEventListener('keydown', onEscKeyPress);
-  document.body.classList.remove('show-modal');
+  window.removeEventListener("keydown", onEscKeyPress);
+  document.body.classList.remove("show-modal");
 }
 
 function onBackdropClick(event) {
   if (event.currentTarget === event.target) {
-    document.body.classList.remove('show-modal');
+    document.body.classList.remove("show-modal");
   }
 }
 
 function onEscKeyPress(even) {
   console.log(even);
-  if (even.code === 'Escape') {
+  if (even.code === "Escape") {
     onCloseModal();
   }
 }

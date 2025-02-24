@@ -1,5 +1,5 @@
 body {
-  font-family: 'Jost', serif;
+  font-family: "Jost", serif;
 }
 .container {
   max-width: 1120px;
@@ -61,18 +61,48 @@ img {
   line-height: 43.35px;
   margin-right: 35px;
 }
+.katalog-text {
+  display: flex;
+  flex-direction: column;
+}
+.list-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #6f73ee;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 82%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+  transition: all 0.3s;
+}
 .button-catalog {
   display: flex;
   align-items: center;
   gap: 13px;
   width: 114px;
-  height: 40px;
+  position: relative;
   border-radius: 5px;
   padding: 15px;
   border: none;
   background-color: #6f73ee;
   color: #fff;
   cursor: pointer;
+}
+.button-catalog:hover {
+  background-color: #1b21e4;
+}
+.button-catalog:hover .list-catalog {
+  opacity: 1;
+  visibility: visible;
+  top: 65%;
+}
+.application-button:hover {
+  background-color: #1b21e4;
 }
 .line {
   display: flex;
@@ -132,6 +162,8 @@ img {
 }
 .header-image {
   margin-bottom: 72px;
+  margin-left: 30px;
+  margin-right: 15px;
 }
 .image {
   display: block;
@@ -246,6 +278,12 @@ img {
   top: 400px;
   left: 136px;
   cursor: pointer;
+}
+.header-booking:hover {
+  background-color: #e6e6e6;
+}
+.email-button:hover {
+  background-color: #e6e6e6;
 }
 .scooters {
   max-width: 1100px;
@@ -367,7 +405,7 @@ img {
 }
 
 .cards-button:hover {
-  background-color: #5a63d1; /* Цвет кнопки при наведении */
+  background-color: #181ecd;
 }
 .application .container {
   display: flex;
@@ -540,8 +578,7 @@ img {
 .header-image .container {
   max-width: 1743px;
   position: relative;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 auto;
 }
 
 .header-image .header-image-img {
@@ -643,7 +680,7 @@ img {
   border-radius: 50%;
 }
 .card-text-items {
-  font-family: 'Roboto', serif;
+  font-family: "Roboto", serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 16.41px;
@@ -759,7 +796,7 @@ img {
   height: 16px;
   border-radius: 4px;
   background-color: #fff;
-  content: '';
+  content: "";
   cursor: pointer;
   margin-right: 9px;
   margin-top: 15px;
@@ -1071,6 +1108,9 @@ body.show-modal .backdrop {
 }
 
 @media (max-width: 991px) {
+  .header-image {
+    margin-left: 15px;
+  }
   .modal {
     max-width: 100%;
     width: 75%;
@@ -1103,7 +1143,7 @@ body.show-modal .backdrop {
         rgba(111, 115, 238, 1),
         rgba(111, 115, 238, 0)
       ),
-      url('../img/header_img.png');
+      url("../img/header_img.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1154,6 +1194,9 @@ body.show-modal .backdrop {
 }
 
 @media (max-width: 767px) {
+  .button-catalog {
+    display: none;
+  }
   .input-email {
     width: 100%;
     margin-right: 0;
@@ -1243,6 +1286,16 @@ body.show-modal .backdrop {
   }
 }
 @media (max-width: 576px) {
+  .futter-bottom {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-left {
+    width: 100%;
+  }
+  .footer-right {
+    width: 100%;
+  }
   .modal-btn-app {
     margin-top: 15px;
     width: 100%;

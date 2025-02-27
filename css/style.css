@@ -28,6 +28,18 @@ img {
   line-height: 17.34px;
   text-align: left;
 }
+.korb svg:hover {
+  fill: #6f73ee;
+}
+.header-link:hover {
+  color: #6f73ee;
+}
+.korb-text:hover {
+  color: #6f73ee;
+}
+.header-social:hover {
+  fill: #6f73ee;
+}
 .header-top {
   border-bottom: 1px solid #ecf3ff;
 }
@@ -48,6 +60,9 @@ img {
   color: #282739;
   text-decoration: none;
   text-align: left;
+}
+.header-right-tel:hover {
+  color: #6f73ee;
 }
 .catalog-content {
   display: flex;
@@ -94,7 +109,7 @@ img {
   cursor: pointer;
 }
 .button-catalog:hover {
-  background-color: #1b21e4;
+  background-color: #484eea;
 }
 .button-catalog:hover .list-catalog {
   opacity: 1;
@@ -102,7 +117,7 @@ img {
   top: 65%;
 }
 .application-button:hover {
-  background-color: #1b21e4;
+  background-color: #484eea;
 }
 .line {
   display: flex;
@@ -138,6 +153,9 @@ img {
   border: none;
   background-color: #6f73ee;
   cursor: pointer;
+}
+.founder-button:hover {
+  background-color: #484eea;
 }
 .korb {
   display: flex;
@@ -405,7 +423,7 @@ img {
 }
 
 .cards-button:hover {
-  background-color: #181ecd;
+  background-color: #484eea;
 }
 .application .container {
   display: flex;
@@ -544,7 +562,9 @@ img {
   line-height: 17.34px;
   color: #6f73ee !important;
 }
-
+.footer-tel:hover {
+  color: #3238e7 !important;
+}
 .footer-title {
   margin: 0 0 17px;
 }
@@ -724,14 +744,21 @@ img {
   column-gap: 40px; /* Расстояние между колонками */
   row-gap: 10px; /* Расстояние между строками */
 }
-
+.header-social svg:hover {
+  fill: #6f73ee;
+}
+.footer-right-column svg:hover {
+  fill: #6f73ee;
+}
 .footer a:not(.logo) {
   font-size: 14px;
   font-weight: 400;
   line-height: 20.23px;
   color: #5d6c7b;
 }
-
+.footer a:not(.logo):hover {
+  color: #6f73ee;
+}
 .footer-left {
   display: flex;
   gap: 44px;

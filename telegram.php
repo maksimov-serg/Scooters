@@ -1,6 +1,6 @@
 <?php
 
-$phone = trim($_POST['phone']); // Убираем лишние пробелы
+$phone = trim($_POST['userphone']); // Убираем лишние пробелы
 $email = isset($_POST['email']) ? trim($_POST['email']) : ''; // Проверяем, передан ли email
 
 $token = "7765492997:AAEBPJhG1EF82KgJkEg2P98P678TIbrYXEw";

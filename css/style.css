@@ -477,7 +477,7 @@ img {
 .input-email {
   border: 0;
   background-color: rgba(255, 255, 255, 0.2);
-  width: 35%;
+  width: 90%;
   height: 53px;
   border-radius: 5px;
   margin-right: 20px;
@@ -494,7 +494,29 @@ img {
   color: #fff;
   font-weight: 400;
 }
+.input-wrapper {
+  position: relative;
+}
+.input.is-invalid {
+  border: 1px solid red;
+}
 
+.just-validate-error-label {
+  position: absolute;
+  top: -20px;
+  left: 36px;
+  background-color: inherit;
+
+  font-size: 0.8rem;
+  display: inline-block;
+  color: red;
+  white-space: nowrap;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .application-photo img {
   width: 100%;
 }
@@ -524,6 +546,7 @@ img {
   text-align: center;
 }
 .email-content form {
+  display: flex;
   width: 65%;
 }
 .email-button {
@@ -1439,6 +1462,26 @@ body.show-modal .backdrop {
   }
   .border-box {
     width: 78%;
+  }
+  .input {
+    width: 100%;
+  }
+  .input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .input-email {
+    width: 100%;
+  }
+  .form {
+    display: block;
+  }
+  .email-button {
+    width: 100%;
+  }
+  .email-content form {
+    display: block !important;
   }
 }
 

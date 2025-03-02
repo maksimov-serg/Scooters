@@ -102,3 +102,59 @@ function onEscKeyPress(even) {
     onCloseModal();
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const forms = document.querySelectorAll("form");
+
+  forms.forEach((form) => {
+    const validation = new JustValidate(form, {
+      errorFieldCssClass: "is-invalid",
+      successFieldCssClass: "is-valid", // Если нужно добавить успешный стиль
+    });
+
+    // Если в форме есть поле userphone — добавляем валидацию телефона
+    if (form.querySelector("[name='userphone']")) {
+      validation.addField("[name='userphone']", [
+        {
+          rule: "required",
+          errorMessage: "Укажите телефон",
+        },
+        {
+          rule: "customRegexp",
+          value: /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/,
+          errorMessage: "Введите корректный номер телефона",
+        },
+      ]);
+    }
+
+    // Если в форме есть поле email — добавляем валидацию email
+    if (form.querySelector("[name='email']")) {
+      validation.addField("[name='email']", [
+        {
+          rule: "required",
+          errorMessage: "Введите ваш email",
+        },
+        {
+          rule: "email",
+          errorMessage: "Введите корректный email",
+        },
+      ]);
+    }
+
+    // Отключаем стандартную отправку формы
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Останавливаем стандартный submit
+      validation.revalidate().then((isValid) => {
+        if (isValid) {
+          console.log("Форма успешно отправлена!");
+          form.submit(); // Отправляем форму, если валидация пройдена
+        } else {
+          console.log("Ошибка валидации!");
+        }
+      });
+    });
+
+    // Слушаем ошибки на полях
+
+    // Очищаем ошибки при успешной валидации
+  });
+});

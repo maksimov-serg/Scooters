@@ -158,3 +158,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // Очищаем ошибки при успешной валидации
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const checkbox = document.querySelector(".contact-form-checkbox");
+  const submitButton = document.querySelector(
+    ".application .application-button"
+  );
+  function toggleSubmitButton() {
+    submitButton.disabled = !checkbox.checked;
+  }
+  toggleSubmitButton();
+  checkbox.addEventListener("change", toggleSubmitButton);
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const checkbox = document.querySelector(".contact-form-checkbox-modal");
+  const submitButton = document.querySelector(".modal-btn-app");
+  function toggleSubmitButton() {
+    submitButton.disabled = !checkbox.checked;
+  }
+  toggleSubmitButton();
+  checkbox.addEventListener("change", toggleSubmitButton);
+});

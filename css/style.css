@@ -111,11 +111,7 @@ img {
 .button-catalog:hover {
   background-color: #484eea;
 }
-.button-catalog:hover .list-catalog {
-  opacity: 1;
-  visibility: visible;
-  top: 65%;
-}
+
 .application-button:hover {
   background-color: #484eea;
 }
@@ -497,6 +493,15 @@ img {
 .input-wrapper {
   position: relative;
 }
+.modal-box .input-wrapper {
+  width: 100%;
+}
+.application .input-wrapper {
+  flex-grow: 1;
+}
+.input-wrapper .phone-mask {
+  width: 100%;
+}
 .input.is-invalid {
   border: 1px solid red;
 }
@@ -658,7 +663,9 @@ img {
 
   border-radius: 10px;
 }
-
+button:disabled {
+  cursor: not-allowed; /* Запрещающий курсор */
+}
 .products-top {
   background-color: #f0f1f5;
   position: relative;
@@ -806,7 +813,7 @@ img {
 .application .phone-mask {
   height: 53px;
   width: 100%;
-  max-width: 263px;
+
   border: 1px solid #eaebed;
   border-radius: 5px;
   padding: 15px 25px;
@@ -901,6 +908,7 @@ img {
 .modal-box-left,
 .modal-box-right {
   flex: 1 1 auto;
+  max-width: 50%;
 }
 
 .modal-box-right img {
@@ -953,7 +961,7 @@ img {
 .modal .phone-mask {
   height: 53px;
   width: 100%;
-  max-width: 263px;
+
   border: 1px solid #eaebed;
   border-radius: 5px;
   padding: 15px 25px;
@@ -967,8 +975,7 @@ img {
 }
 
 .modal-btn-app {
-  margin-top: 20px;
-  width: 264px;
+  width: 100%;
 }
 
 body.show-modal .backdrop {
@@ -1018,7 +1025,34 @@ body.show-modal .backdrop {
 .products .title-section {
   margin-left: 0;
 }
-
+.container .thanks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.thanks-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thanks-buttonn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thanks-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 258px;
+  height: 53px;
+  background-color: #6f73ee;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
 @media (max-width: 1366px) {
   .header-model {
     position: absolute;
@@ -1156,6 +1190,18 @@ body.show-modal .backdrop {
     object-fit: cover;
   }
 }
+@media (max-width: 992px) {
+  .email-content form {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.button-catalog:hover .list-catalog {
+  opacity: 1;
+  visibility: visible;
+  top: 65%;
+}
 
 @media (max-width: 991px) {
   .header-image {
@@ -1165,9 +1211,7 @@ body.show-modal .backdrop {
     max-width: 100%;
     width: 75%;
   }
-  .email-button {
-    margin-top: 15px;
-  }
+
   .header-booking,
   .text-title,
   .text-moscow,
@@ -1224,7 +1268,7 @@ body.show-modal .backdrop {
     text-align: center;
   }
   .application .phone-mask {
-    width: 60%;
+    width: 100%;
     max-width: unset;
     margin-right: 15px;
   }
@@ -1237,6 +1281,7 @@ body.show-modal .backdrop {
     width: 80px;
   }
 }
+
 @media (max-width: 776px) {
   .founder-button {
     width: 70px;
@@ -1340,6 +1385,9 @@ body.show-modal .backdrop {
     flex-wrap: wrap;
     gap: 20px;
   }
+  .modal-box-left {
+    max-width: 100%;
+  }
   .footer-left {
     width: 100%;
   }
@@ -1416,9 +1464,7 @@ body.show-modal .backdrop {
   .scooters-items {
     font-size: 16px;
   }
-  .email-button {
-    margin-top: 12px;
-  }
+
   .test-drive {
     font-size: 19px;
   }
@@ -1427,6 +1473,17 @@ body.show-modal .backdrop {
   }
   .header-link {
     font-size: 11px;
+  }
+}
+@media (max-width: 600px) {
+  .application-button {
+    width: 100%;
+  }
+  .input-wrapper {
+    width: 100%;
+  }
+  .input phone-mask {
+    width: 100%;
   }
 }
 
@@ -1466,12 +1523,13 @@ body.show-modal .backdrop {
   .input {
     width: 100%;
   }
+
   .input-wrapper {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
   }
-  .input-email {
+  .modal-box .input-email {
     width: 100%;
   }
   .form {
@@ -1479,6 +1537,7 @@ body.show-modal .backdrop {
   }
   .email-button {
     width: 100%;
+    margin-top: 15px;
   }
   .email-content form {
     display: block !important;
